@@ -32,7 +32,7 @@ do
         done
     done'
 
-    CREATE="cd home/node$v && echo \"$GENERATE_CONSTELLATION_START\" > constellation-start.sh && chmod 755 constellation-start.sh"
+    CREATE="cd home/node$v && echo '$GENERATE_CONSTELLATION_START' > constellation-start.sh && chmod 755 constellation-start.sh"
     kubectl exec $(kubectl get pods --selector=node=node$v|  awk 'NR>1 {print $1}') -- bash -c "$CREATE"
     echo "No.$v constellation-start ok"
 done
