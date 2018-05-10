@@ -4,7 +4,7 @@ set -e
 
 mkdir -p qdata/logs
 echo "[*] Starting Constellation nodes"
-./constellation-start1.sh
+./constellation-start.sh
 
 echo "[*] Starting Ethereum nodes"
 set -v
