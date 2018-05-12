@@ -62,7 +62,7 @@ public class TransactionRequest {
         req.put("from", fromAddress);
         req.put("to", contractAddress);
         req.put("gas", DEFAULT_GAS);
-        req.put("data", function.encodeAsHex(args));
+        req.put("data", "0x"+function.encodeAsHex(args));
 
         if (StringUtils.isNotBlank(privateFrom)) {
             req.put("privateFrom", privateFrom);

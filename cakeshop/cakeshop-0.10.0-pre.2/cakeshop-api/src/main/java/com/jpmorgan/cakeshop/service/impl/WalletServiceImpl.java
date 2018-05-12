@@ -137,6 +137,8 @@ public class WalletServiceImpl implements WalletService, GethRpcConstants {
     public boolean isUnlocked(String address) throws APIException {
         try {
             Map<String, Object> result = gethService.executeGethCall("eth_sign", new Object[]{address, DUMMY_PAYLOAD_HASH});
+            LOG.info("isUnlocked address=" + address);
+            Map<String, Object> result = gethService.executeGethCall("eth_sign", new Object[]{address, "0x" + DUMMY_PAYLOAD_HASH});
             if (StringUtils.isNotBlank((String) result.get("_result"))) {
                 return true;
             }
