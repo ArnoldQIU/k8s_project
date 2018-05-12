@@ -38,5 +38,5 @@ set -x \
 
 export USER="$CAKESHOP_USER" \
 && cd "$CAKESHOP_HOME" \
-&& gosu root java -jar home/cakeshop.war example \
-&& gosu root java -jar home/cakeshop.war &
+&& gosu root java -jar ${CAKESHOP_HOME}/cakeshop.war example \
+&& gosu root java -jar ${CAKESHOP_HOME}/cakeshop.war &
